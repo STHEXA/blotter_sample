@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="blotter.min.js"></script>
+    <script src="channelSplitMaterial.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="container">
+
+    </div>
+    <script>
+      let text = new Blotter.Text("TikTok", {
+        family : "serif",
+        size : 120,
+        fill : "#171717"
+      });
+      let text2 = new Blotter.Text("TikTok", {
+        family : "serif",
+        size : 120,
+        fill : "#171717"
+      });
+
+      let material = new Blotter.ChannelSplitMaterial();
+
+      let blotter = new Blotter(material, { texts : text });
+
+      let scope = blotter.forText(text);
+      let material2 = new Blotter.ChannelSplitMaterial();
+
+      let blotter2 = new Blotter(material, { texts : text2 });
+
+      let scope2 = blotter.forText(text2);
+
+      let container = document.body.querySelector('.container');
+      console.log(container);
+      scope.appendTo(container);
+
+    </script>
+  </body>
+</html>
